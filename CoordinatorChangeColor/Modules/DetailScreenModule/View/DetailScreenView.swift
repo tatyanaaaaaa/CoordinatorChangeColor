@@ -9,23 +9,29 @@ import UIKit
 
 protocol DetailScreenViewOutput: AnyObject {
  
+    /// Кнопка нажата пользователем
     func switchButtonAction()
 }
 
 protocol DetailScreenViewInput: AnyObject {
     
+    /// Устанавливает текст
+    /// - Parameter text: текст на экранe
     func set(text: String)
-    
-    func changeBackgroundColor()
 }
 
 final class DetailScreenView: UIView & DetailScreenViewInput {
     
+    // MARK: - Internal property
     
     weak var output: DetailScreenViewOutput?
     
+    // MARK: - Private property
+    
     private let textLabel = UILabel()
     private let switchButton = UIButton()
+    
+    // MARK: - Internal func
     
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -37,14 +43,13 @@ final class DetailScreenView: UIView & DetailScreenViewInput {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public func
+    
     public func set(text: String) {
         textLabel.text = text
     }
     
-    public func changeBackgroundColor() {
-        backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1),
-                                  blue: CGFloat.random(in: 0...1), alpha: 1)
-    }
+    // MARK: - Private func
     
     private func setupDefaultSettings() {
         backgroundColor = .white
@@ -75,8 +80,9 @@ final class DetailScreenView: UIView & DetailScreenViewInput {
     }
 }
 
+// MARK: - Private Appearents
 
-extension DetailScreenView {
+private extension DetailScreenView {
     struct Appearents {
         let setTextButton = "Закрыть экран"
         let padding: CGFloat = 30

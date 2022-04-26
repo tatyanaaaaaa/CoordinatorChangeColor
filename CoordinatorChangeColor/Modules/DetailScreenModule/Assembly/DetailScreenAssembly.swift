@@ -8,6 +8,9 @@
 import UIKit
 
 final class DetailScreenAssembly {
+    
+    // MARK: - Internal func
+    
     func createModule() -> DetailScreenModule {
         let view = DetailScreenView()
         let interactor = DetailScreenInteractor()

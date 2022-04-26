@@ -25,10 +25,16 @@ protocol MainScreenViewInput: AnyObject {
 
 final class MainScreenView: UIView & MainScreenViewInput {
     
+    // MARK: - Internal property
+    
     weak var output: MainScreenViewOutput?
+    
+    // MARK: - Private property
     
     private let textLabel = UILabel()
     private let switchButton = UIButton()
+    
+    // MARK: - Internal func
     
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -40,6 +46,8 @@ final class MainScreenView: UIView & MainScreenViewInput {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public func
+    
     public func set(text: String) {
         textLabel.text = text
     }
@@ -48,6 +56,8 @@ final class MainScreenView: UIView & MainScreenViewInput {
         backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1),
                                   blue: CGFloat.random(in: 0...1), alpha: 1)
     }
+    
+    // MARK: - Private func
     
     private func setupDefaultSettings() {
         backgroundColor = .white
@@ -78,8 +88,9 @@ final class MainScreenView: UIView & MainScreenViewInput {
     }
 }
 
+// MARK: - Private Appearents
 
-extension MainScreenView {
+private extension MainScreenView {
     struct Appearents {
         let setTextButton = "Нажать, для перехода на следующий экран"
         let padding: CGFloat = 30

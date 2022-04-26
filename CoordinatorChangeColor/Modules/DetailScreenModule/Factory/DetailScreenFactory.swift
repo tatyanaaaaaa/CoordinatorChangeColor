@@ -17,7 +17,8 @@ protocol DetailScreenFactoryInput: AnyObject {
 
 final class DetailScreenFactory: DetailScreenFactoryInput {
 
-
+    // MARK: - Internal property
+    
     weak var output: DetailScreenFactoryOutput?
     
 }

@@ -17,7 +17,7 @@ protocol MainScreenFactoryInput: AnyObject {
 
 final class MainScreenFactory: MainScreenFactoryInput {
     
+    // MARK: - Internal property
+    
     weak var output: MainScreenFactoryOutput?
-    
-    
 }

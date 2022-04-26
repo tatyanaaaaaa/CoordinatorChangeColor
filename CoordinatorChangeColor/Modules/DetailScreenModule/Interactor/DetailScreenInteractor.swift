@@ -7,7 +7,7 @@
 import UIKit
 
 protocol DetailScreenInteractorOutput: AnyObject {
-    
+
 }
 
 protocol DetailScreenInteractorInput: AnyObject {
@@ -16,7 +16,8 @@ protocol DetailScreenInteractorInput: AnyObject {
 
 final class DetailScreenInteractor: DetailScreenInteractorInput {
 
-
+    // MARK: - Internal property
+    
     weak var output: DetailScreenInteractorOutput?
     
 }

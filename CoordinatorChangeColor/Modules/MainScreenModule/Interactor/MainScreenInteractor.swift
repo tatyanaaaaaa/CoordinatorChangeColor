@@ -22,14 +22,20 @@ protocol MainScreenInteractorInput: AnyObject {
 
 final class MainScreenInteractor: MainScreenInteractorInput {
     
+    // MARK: - Internal property
+    
     weak var output: MainScreenInteractorOutput?
+    
+    // MARK: - Internal func
     
     func getContentText() {
         output?.didRecive(text: Appearents().setText)
     }
 }
 
-extension MainScreenInteractor {
+// MARK: - Private Appearents
+
+private extension MainScreenInteractor {
     struct Appearents {
         let setText = "Good"
     }

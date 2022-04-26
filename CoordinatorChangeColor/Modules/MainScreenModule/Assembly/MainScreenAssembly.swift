@@ -8,6 +8,9 @@
 import UIKit
 
 final class MainScreenAssembly {
+    
+    // MARK: - Internal func
+    
     func createModule() -> MainScreenModule {
         let view = MainScreenView()
         let interactor = MainScreenInteractor()
