@@ -9,6 +9,8 @@ import UIKit
 
 protocol MainScreenModuleOutput: AnyObject {
     
+    /// Устанавливает текст на следующем экране
+    func set(text: String)
 }
 
 protocol MainScreenModuleInput: AnyObject {
@@ -46,6 +48,7 @@ final class MainScreenViewController: MainScreenModule {
         super.viewDidLoad()
         
         interactor.getContentText()
+        title = Appearents().setTitle
     }
 }
 
@@ -62,8 +65,12 @@ extension MainScreenViewController: MainScreenFactoryOutput {
 
 extension MainScreenViewController: MainScreenInteractorOutput {
     func didRecive(text: String) {
-        moduleView.set(text: text)
+        moduleOutput?.set(text: text)
     }
-    
-    
+}
+
+extension MainScreenViewController {
+    struct Appearents {
+        let setTitle = "Main screen"
+    }
 }
